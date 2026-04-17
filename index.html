@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Todo o Sempre | 8 Meses</title>
+    
+    <!-- Pré-carregamento das fontes e do script de festa -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <script src="https://jsdelivr.net"></script>
+
+    <style>
+        :root {
+            --primary-purple: #4a148c; /* Roxo mais profundo e elegante */
+            --mid-purple: #7b1fa2;
+            --light-purple: #f3e5f5;
+            --accent-gold: #ffd700;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #faf8ff;
+            color: #2e1a3d;
+            line-height: 1.8;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(74, 20, 140, 0.2), rgba(243, 229, 245, 0.9)), 
+                        url('https://unsplash.com') no-repeat center/cover;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(3.5rem, 10vw, 6rem);
+            color: var(--primary-purple);
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .romantic-section {
+            padding: 80px 25px;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .long-text {
+            font-size: 1.15rem;
+            color: #3b254a;
+            text-align: justify;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(74, 20, 140, 0.05);
+            margin-bottom: 60px;
+        }
+
+        .long-text p { margin-bottom: 25px; }
+
+        .proposal-card {
+            background: linear-gradient(135deg, white, var(--light-purple));
+            padding: 60px 30px;
+            border-radius: 30px;
+            border: 2px solid var(--mid-purple);
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(74, 20, 140, 0.1);
+        }
+
+        .btn-aceitar {
+            background: var(--primary-purple);
+            color: white;
+            border: none;
+            padding: 22px 60px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-top: 30px;
+        }
+
+        .btn-aceitar:active { transform: scale(0.95); }
+        .btn-aceitar:hover { background: var(--mid-purple); box-shadow: 0 5px 15px rgba(74, 20, 140, 0.4); }
+
+        /* Modal Ultra Rápido */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(46, 26, 61, 0.85);
+            display: none; /* Controlado via JS */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            backdrop-filter: blur(5px);
+        }
+
+        .message-card {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            position: relative;
+            max-width: 450px;
+            width: 85%;
+            text-align: center;
+            border-top: 10px solid var(--primary-purple);
+            transform: scale(0.9);
+            transition: 0.3s;
+        }
+
+        .show-modal .message-card { transform: scale(1); }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #aaa;
+            line-height: 1;
+        }
+
+        .close-btn:hover { color: var(--primary-purple); }
+
+        .message-card h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--primary-purple);
+            margin-bottom: 10px;
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            background: #f3e5f5;
+            color: var(--primary-purple);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="font-size: 3rem; margin-bottom: 10px;">✨💜✨</div>
+        <h1>Nosso Destino</h1>
+        <p>Mais do que um encontro, uma escolha diária.</p>
+    </header>
+
+    <div class="romantic-section">
+        <div class="long-text">
+            <p>Oito meses podem parecer pouco para alguns, mas para mim, foram os meses mais intensos e verdadeiros da minha vida. Cada segundo ao seu lado me ensinou algo novo sobre o que significa amar e ser amado. Eu encontrei em você não apenas um par, mas um lar, um refúgio e a minha maior motivação para ser alguém melhor todos os dias.</p>
+            
+            <p>Eu amo a forma como a gente se entende sem precisar de muitas palavras, como o seu abraço tem o poder de silenciar qualquer caos externo e como nossos sonhos começaram a se entrelaçar de uma forma tão natural que hoje eu já não consigo imaginar um futuro onde você não seja a protagonista. Você é a minha paz no meio da tempestade e a minha alegria nos dias comuns.</p>
+
+            <p>Sabe, eu prometo estar aqui não só nos momentos de celebração, mas principalmente quando o mundo parecer pesado demais. Prometo segurar sua mão com a mesma força do nosso primeiro dia e olhar para você com o mesmo brilho nos olhos daqui a décadas. Minha escolha já foi feita há muito tempo, e essa escolha é, e sempre será, você.</p>
+        </div>
+
+        <div class="proposal-card">
+            <h2 style="font-family: 'Dancing Script'; font-size: 2.8rem; color: var(--primary-purple);">Uma Vida Inteira...</h2>
+            <p>O que vivemos até aqui foi só o prólogo da história mais linda que o mundo vai ver. Eu quero tudo com você: os jantares caros, os domingos de preguiça, as conquistas e os aprendizados.</p>
+            <p style="font-weight: 600; font-size: 1.3rem;">Você aceita continuar essa história comigo para sempre?</p>
+            <button class="btn-aceitar" onclick="abrirCard()">SIM, ACEITO!</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="message-card">
+            <span class="close-btn" onclick="fecharCard()">&times;</span>
+            <h3>Eu te amo...</h3>
+            <p style="font-size: 1.4rem; color: #4a148c; font-weight: 600;">Feliz 8 meses meu amor!</p>
+            <p>Você é o melhor presente que a vida já me deu. Mal posso esperar pelos próximos anos ao seu lado.</p>
+            <div style="font-size: 2.5rem; margin-top: 15px;">♾️💜💍</div>
+        </div>
+    </div>
+
+    <footer>
+        Sete meses de muitos que virão. Com todo o meu amor 💜.
+    </footer>
+
+    <script>
+        // Função de disparo imediato
+        function abrirCard() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'flex';
+            
+            // Pequeno timeout apenas para a animação de escala funcionar
+            setTimeout(() => {
+                modal.classList.add('show-modal');
+            }, 10);
+
+            // Confetes roxos, dourados e brancos
+            confetti({
+                particleCount: 180,
+                spread: 80,
+                origin: { y: 0.6 },
+                colors: ['#4a148c', '#7b1fa2', '#ffd700', '#ffffff']
+            });
+        }
+
+        function fecharCard() {
+            const modal = document.getElementById('modal');
+            modal.classList.remove('show-modal');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Fechar ao clicar no fundo
+        window.onclick = function(e) {
+            if (e.target == document.getElementById('modal')) fecharCard();
+        }
+    </script>
+</body>
+</html>
