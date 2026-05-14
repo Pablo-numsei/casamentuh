@@ -2,348 +2,272 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Para Todo o Sempre | 7 Meses</title>
-
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Fontes otimizadas -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <title>7 Meses 💜</title>
 
     <style>
-        :root {
-            --primary-purple: #4a148c;
-            --mid-purple: #7b1fa2;
-            --light-purple: #f3e5f5;
-            --background: #faf8ff;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg,#120018,#2a0b3f,#120018);
+            min-height:100vh;
+            overflow-x:hidden;
+            color:white;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: var(--background);
-            color: #2e1a3d;
-            line-height: 1.7;
-            overflow-x: hidden;
-
-            -webkit-tap-highlight-color: transparent;
+        .container{
+            width:100%;
+            max-width:900px;
+            margin:auto;
+            padding:25px;
         }
 
         /* HERO */
 
-        header {
-            min-height: 100vh;
+        .hero{
+            height:100vh;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
 
-            text-align: center;
-            padding: 20px;
-
-            background:
-                linear-gradient(
-                    rgba(74, 20, 140, 0.18),
-                    rgba(243, 229, 245, 0.95)
-                ),
-                url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=60&w=700&auto=format&fit=crop')
-                no-repeat center center / cover;
-
-            background-attachment: scroll;
+            text-align:center;
         }
 
-        .hero-emoji {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-
-            animation: floating 3s ease-in-out infinite;
+        .heart{
+            font-size:70px;
+            animation:pulse 1.5s infinite;
         }
 
-        h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: clamp(3rem, 10vw, 5.8rem);
+        h1{
+            margin-top:20px;
 
-            color: var(--primary-purple);
+            font-size: clamp(45px, 10vw, 90px);
 
-            margin-bottom: 10px;
+            font-weight:900;
 
-            text-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            background: linear-gradient(90deg,#ffffff,#d8b4ff);
+
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
         }
 
-        .subtitle {
-            font-size: 1.1rem;
-            color: #56396d;
-            font-weight: 600;
-        }
+        .subtitle{
+            margin-top:15px;
 
-        /* SECTION */
+            font-size:18px;
 
-        .romantic-section {
-            width: 100%;
-            max-width: 900px;
-
-            margin: auto;
-            padding: 60px 20px;
-        }
-
-        .long-text {
-            background: white;
-
-            padding: 40px;
-
-            border-radius: 24px;
-
-            box-shadow:
-                0 10px 30px rgba(74, 20, 140, 0.06);
-
-            margin-bottom: 45px;
-        }
-
-        .long-text p {
-            margin-bottom: 22px;
-
-            font-size: 1.05rem;
-            color: #3a2648;
-            text-align: justify;
-        }
-
-        .long-text p:last-child {
-            margin-bottom: 0;
+            color:#e7d4ff;
         }
 
         /* CARD */
 
-        .proposal-card {
-            background:
-                linear-gradient(
-                    135deg,
-                    white,
-                    var(--light-purple)
-                );
+        .card{
+            background: rgba(255,255,255,0.08);
 
-            border-radius: 28px;
+            backdrop-filter: blur(10px);
 
-            padding: 50px 25px;
+            border:1px solid rgba(255,255,255,0.1);
 
-            text-align: center;
+            border-radius:25px;
 
-            border: 1px solid rgba(123, 31, 162, 0.12);
+            padding:35px;
+
+            margin-bottom:35px;
 
             box-shadow:
-                0 10px 35px rgba(74, 20, 140, 0.07);
+            0 10px 40px rgba(0,0,0,0.25);
         }
 
-        .proposal-card h2 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.8rem;
+        .text{
+            font-size:18px;
 
-            color: var(--primary-purple);
+            line-height:1.8;
 
-            margin-bottom: 15px;
+            color:#f3e9ff;
         }
 
-        .proposal-card p {
-            color: #55346e;
-            font-size: 1.08rem;
+        .text p{
+            margin-bottom:22px;
         }
 
         /* BUTTON */
 
-        .btn-aceitar {
-            margin-top: 30px;
-
-            border: none;
-            outline: none;
-
-            background: var(--primary-purple);
-            color: white;
-
-            padding: 18px 42px;
-
-            border-radius: 50px;
-
-            font-size: 1.15rem;
-            font-weight: 600;
-
-            cursor: pointer;
-
-            transition:
-                transform 0.25s ease,
-                background 0.25s ease,
-                box-shadow 0.25s ease;
-
-            box-shadow:
-                0 10px 25px rgba(74, 20, 140, 0.20);
-
-            touch-action: manipulation;
+        .center{
+            text-align:center;
         }
 
-        .btn-aceitar:hover {
-            background: #6a1b9a;
+        button{
+            margin-top:25px;
 
-            transform: scale(1.04);
+            border:none;
 
-            box-shadow:
-                0 14px 30px rgba(74, 20, 140, 0.28);
+            background: linear-gradient(90deg,#a855f7,#7e22ce);
+
+            color:white;
+
+            padding:20px 45px;
+
+            border-radius:60px;
+
+            font-size:18px;
+
+            font-weight:bold;
+
+            cursor:pointer;
+
+            transition:.25s;
         }
 
-        .btn-aceitar:active {
-            transform: scale(0.97);
+        button:hover{
+            transform:scale(1.05);
         }
 
         /* MODAL */
 
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
+        .modal{
+            position:fixed;
 
-            background: rgba(0,0,0,0.72);
+            inset:0;
 
-            display: none;
+            background:rgba(0,0,0,.7);
 
-            justify-content: center;
-            align-items: center;
+            display:none;
 
-            padding: 20px;
+            justify-content:center;
+            align-items:center;
 
-            z-index: 999;
+            padding:20px;
+
+            z-index:999;
         }
 
-        .message-card {
-            background: white;
+        .modal-card{
+            width:100%;
+            max-width:420px;
 
-            width: 100%;
-            max-width: 450px;
+            background:#fff;
 
-            padding: 40px 30px;
+            color:#2a0b3f;
 
-            border-radius: 28px;
+            border-radius:25px;
 
-            text-align: center;
+            padding:40px 30px;
 
-            position: relative;
+            text-align:center;
 
-            border-top: 8px solid var(--primary-purple);
-
-            animation: popup 0.35s ease;
+            animation:show .3s ease;
         }
 
-        .close-btn {
-            position: absolute;
+        .modal-card h2{
+            font-size:45px;
 
-            top: 10px;
-            right: 18px;
-
-            font-size: 32px;
-
-            color: #999;
-
-            cursor: pointer;
-
-            transition: 0.25s;
+            margin-bottom:10px;
         }
 
-        .close-btn:hover {
-            color: var(--primary-purple);
+        .modal-card p{
+            font-size:18px;
+
+            margin-top:10px;
         }
 
-        .message-card h3 {
-            font-family: 'Dancing Script', cursive;
+        .emoji{
+            font-size:40px;
 
-            font-size: 3rem;
-
-            color: var(--primary-purple);
-
-            margin-bottom: 10px;
+            margin-top:20px;
         }
 
-        .highlight {
-            color: var(--primary-purple);
+        .close{
+            margin-top:25px;
 
-            font-size: 1.35rem;
-            font-weight: 700;
-
-            margin-bottom: 12px;
+            background:#7e22ce;
         }
 
-        .emoji {
-            margin-top: 16px;
-            font-size: 2.4rem;
+        footer{
+            text-align:center;
+
+            padding:30px;
+
+            color:#d8b4ff;
         }
 
-        /* FOOTER */
+        /* PARTICLES */
 
-        footer {
-            text-align: center;
-
-            padding: 35px 20px;
-
-            color: var(--primary-purple);
-
-            font-weight: 600;
+        .bg{
+            position:fixed;
+            inset:0;
+            overflow:hidden;
+            z-index:-1;
         }
 
-        /* ANIMAÇÕES */
+        .ball{
+            position:absolute;
 
-        @keyframes popup {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
+            width:10px;
+            height:10px;
+
+            background:rgba(255,255,255,.15);
+
+            border-radius:50%;
+
+            animation:float linear infinite;
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes pulse{
+            0%{transform:scale(1);}
+            50%{transform:scale(1.12);}
+            100%{transform:scale(1);}
+        }
+
+        @keyframes show{
+            from{
+                opacity:0;
+                transform:scale(.7);
             }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
+            to{
+                opacity:1;
+                transform:scale(1);
             }
         }
 
-        @keyframes floating {
-            0% {
-                transform: translateY(0px);
+        @keyframes float{
+            from{
+                transform:translateY(100vh);
             }
-
-            50% {
-                transform: translateY(-8px);
-            }
-
-            100% {
-                transform: translateY(0px);
+            to{
+                transform:translateY(-120vh);
             }
         }
 
         /* MOBILE */
 
-        @media (max-width: 768px) {
+        @media(max-width:700px){
 
-            .long-text {
-                padding: 28px;
+            .card{
+                padding:25px;
             }
 
-            .proposal-card {
-                padding: 40px 22px;
+            .text{
+                font-size:16px;
             }
 
-            .btn-aceitar {
-                width: 100%;
-                padding: 18px;
+            button{
+                width:100%;
+                padding:18px;
             }
 
-            .message-card h3 {
-                font-size: 2.5rem;
+            .modal-card h2{
+                font-size:38px;
             }
         }
     </style>
@@ -351,66 +275,56 @@
 
 <body>
 
+    <!-- FUNDO -->
+
+    <div class="bg" id="bg"></div>
+
     <!-- HERO -->
 
-    <header>
+    <section class="hero container">
 
-        <div class="hero-emoji">
-            ✨💜✨
+        <div class="heart">
+            💜
         </div>
 
-        <h1>Nosso Destino</h1>
+        <h1>7 Meses</h1>
 
         <p class="subtitle">
-            A melhor escolha da minha vida.
+            O começo da nossa eternidade.
         </p>
 
-    </header>
+    </section>
 
-    <!-- CONTENT -->
+    <!-- TEXTO -->
 
-    <section class="romantic-section">
+    <section class="container">
 
-        <div class="long-text">
+        <div class="card text">
 
             <p>
-                Sete meses se passaram e, se eu pudesse voltar no tempo,
-                escolheria você outras mil vezes, cada vez mais rápido.
-                O que vivemos até aqui transformou a minha forma de enxergar o
-                mundo e me mostrou que o amor verdadeiro mora na simplicidade
-                do nosso dia a dia, no seu sorriso e no brilho do seu olhar.
+                Eu nunca imaginei que alguém pudesse transformar tanto os meus dias
+                como você transformou. Cada momento ao seu lado virou uma memória
+                especial e cada conversa nossa virou um lugar onde eu encontro paz.
             </p>
 
             <p>
-                Eu amo como a gente se completa, como cada conversa nossa parece
-                durar minutos quando na verdade levamos horas, e como o seu abraço
-                é o único lugar onde eu me sinto totalmente em paz.
-                Sete meses de aprendizado, de risadas e de uma cumplicidade que eu
-                nunca achei que fosse possível encontrar em alguém.
+                Esses sete meses passaram rápido demais, mas ao mesmo tempo parecem
+                carregar uma vida inteira de sentimentos bons. Você trouxe luz,
+                carinho, felicidade e uma sensação de lar que eu nunca tinha sentido.
             </p>
 
             <p>
-                Eu quero que esses sete meses sejam apenas o prefácio de uma história
-                eterna. Quero estar ao seu lado em cada conquista, segurar sua mão em
-                cada desafio e continuar me apaixonando por você todos os dias.
-                Você é o meu presente mais precioso e o meu futuro mais desejado.
+                E se depender de mim, isso é só o começo.
+                Porque eu escolheria você todos os dias, em todas as versões da vida.
             </p>
 
-        </div>
+            <div class="center">
 
-        <!-- CARD -->
+                <button onclick="openModal()">
+                    💜 Continuar Nossa História
+                </button>
 
-        <div class="proposal-card">
-
-            <h2>Uma Vida Inteira...</h2>
-
-            <p>
-                Você aceita continuar escrevendo essa história comigo para sempre?
-            </p>
-
-            <button class="btn-aceitar" onclick="abrirCard()">
-                SIM, EU ACEITO!
-            </button>
+            </div>
 
         </div>
 
@@ -418,106 +332,81 @@
 
     <!-- MODAL -->
 
-    <div class="modal-overlay" id="modal">
+    <div class="modal" id="modal">
 
-        <div class="message-card">
+        <div class="modal-card">
 
-            <span class="close-btn" onclick="fecharCard()">
-                &times;
-            </span>
+            <h2>Eu te amo</h2>
 
-            <h3>Eu te amo...</h3>
-
-            <p class="highlight">
-                Feliz 7 meses meu amor!
+            <p>
+                Feliz 7 meses meu amor ✨
             </p>
 
             <p>
-                Obrigado por ser a melhor parte de mim.
+                Você é minha pessoa favorita no mundo inteiro.
             </p>
 
             <div class="emoji">
-                ♾️💜💍
+               💜💜
             </div>
+
+            <button class="close" onclick="closeModal()">
+                Fechar
+            </button>
 
         </div>
 
     </div>
 
     <footer>
-        Sete meses inesquecíveis 💜
+        Feito com amor 💜
     </footer>
-
-    <!-- SCRIPT -->
 
     <script>
 
+        // MODAL
+
         const modal = document.getElementById('modal');
 
-        async function abrirCard() {
-
-            modal.style.display = 'flex';
-
-            // Carrega confetti só quando clicar
-            const confettiModule = await import(
-                'https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.module.mjs'
-            );
-
-            const confetti = confettiModule.default;
-
-            // Confetti principal
-            confetti({
-                particleCount: 140,
-                spread: 85,
-                origin: { y: 0.6 },
-
-                colors: [
-                    '#4a148c',
-                    '#7b1fa2',
-                    '#ffffff',
-                    '#d1a3ff'
-                ]
-            });
-
-            // Laterais
-            setTimeout(() => {
-
-                confetti({
-                    particleCount: 70,
-                    angle: 60,
-                    spread: 65,
-                    origin: { x: 0 }
-                });
-
-                confetti({
-                    particleCount: 70,
-                    angle: 120,
-                    spread: 65,
-                    origin: { x: 1 }
-                });
-
-            }, 200);
+        function openModal(){
+            modal.style.display='flex';
         }
 
-        function fecharCard() {
-            modal.style.display = 'none';
+        function closeModal(){
+            modal.style.display='none';
         }
 
-        // Fechar clicando fora
-        window.onclick = function (e) {
-
-            if (e.target === modal) {
-                fecharCard();
+        window.onclick = function(e){
+            if(e.target === modal){
+                closeModal();
             }
-        };
+        }
 
-        // ESC fecha modal
-        document.addEventListener('keydown', function (e) {
+        // PARTICLES
 
-            if (e.key === 'Escape') {
-                fecharCard();
-            }
-        });
+        const bg = document.getElementById('bg');
+
+        for(let i=0;i<25;i++){
+
+            const ball = document.createElement('div');
+
+            ball.classList.add('ball');
+
+            ball.style.left = Math.random()*100 + '%';
+
+            const size = Math.random()*8 + 4;
+
+            ball.style.width = size + 'px';
+            ball.style.height = size + 'px';
+
+            ball.style.animationDuration =
+            (Math.random()*12 + 8) + 's';
+
+            ball.style.animationDelay =
+            Math.random()*5 + 's';
+
+            bg.appendChild(ball);
+        }
 
     </script>
 
