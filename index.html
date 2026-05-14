@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Para Todo o Sempre | 7 Meses</title>
 
-    <!-- Google Fonts -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <!-- Confetti -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Fontes otimizadas -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --primary-purple: #4a148c;
             --mid-purple: #7b1fa2;
             --light-purple: #f3e5f5;
-            --soft-bg: #faf8ff;
+            --background: #faf8ff;
         }
 
         * {
@@ -35,135 +34,175 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--soft-bg);
+            background: var(--background);
             color: #2e1a3d;
-            line-height: 1.8;
+            line-height: 1.7;
             overflow-x: hidden;
+
+            -webkit-tap-highlight-color: transparent;
         }
 
-        /* HEADER */
+        /* HERO */
 
         header {
-            height: 100vh;
+            min-height: 100vh;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
             text-align: center;
             padding: 20px;
 
             background:
                 linear-gradient(
-                    rgba(74, 20, 140, 0.25),
-                    rgba(243, 229, 245, 0.92)
+                    rgba(74, 20, 140, 0.18),
+                    rgba(243, 229, 245, 0.95)
                 ),
-                url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1400&auto=format&fit=crop')
-                no-repeat center/cover;
+                url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=60&w=700&auto=format&fit=crop')
+                no-repeat center center / cover;
 
-            animation: fadeIn 1.5s ease;
+            background-attachment: scroll;
         }
 
-        header div {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            animation: flutuar 3s infinite ease-in-out;
+        .hero-emoji {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+
+            animation: floating 3s ease-in-out infinite;
         }
 
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: clamp(3.5rem, 10vw, 6rem);
+            font-size: clamp(3rem, 10vw, 5.8rem);
+
             color: var(--primary-purple);
+
             margin-bottom: 10px;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+            text-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
-        header p {
-            font-size: 1.2rem;
-            color: #4d3561;
-            font-weight: 500;
+        .subtitle {
+            font-size: 1.1rem;
+            color: #56396d;
+            font-weight: 600;
         }
 
         /* SECTION */
 
         .romantic-section {
-            padding: 70px 25px;
+            width: 100%;
             max-width: 900px;
+
             margin: auto;
+            padding: 60px 20px;
         }
 
         .long-text {
-            font-size: 1.12rem;
-            color: #3b254a;
-            text-align: justify;
             background: white;
-            padding: 45px;
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(74, 20, 140, 0.08);
-            margin-bottom: 60px;
-            animation: subir 1s ease;
+
+            padding: 40px;
+
+            border-radius: 24px;
+
+            box-shadow:
+                0 10px 30px rgba(74, 20, 140, 0.06);
+
+            margin-bottom: 45px;
         }
 
         .long-text p {
             margin-bottom: 22px;
+
+            font-size: 1.05rem;
+            color: #3a2648;
+            text-align: justify;
+        }
+
+        .long-text p:last-child {
+            margin-bottom: 0;
         }
 
         /* CARD */
 
         .proposal-card {
-            background: linear-gradient(
-                135deg,
-                white,
-                var(--light-purple)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    white,
+                    var(--light-purple)
+                );
 
-            padding: 65px 30px;
-            border-radius: 30px;
-            border: 2px solid rgba(123, 31, 162, 0.2);
+            border-radius: 28px;
+
+            padding: 50px 25px;
+
             text-align: center;
 
-            box-shadow: 0 15px 40px rgba(74, 20, 140, 0.08);
+            border: 1px solid rgba(123, 31, 162, 0.12);
 
-            animation: subir 1.2s ease;
+            box-shadow:
+                0 10px 35px rgba(74, 20, 140, 0.07);
         }
 
         .proposal-card h2 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
+            font-size: 2.8rem;
+
             color: var(--primary-purple);
+
             margin-bottom: 15px;
         }
 
         .proposal-card p {
-            font-size: 1.15rem;
             color: #55346e;
+            font-size: 1.08rem;
         }
 
         /* BUTTON */
 
         .btn-aceitar {
+            margin-top: 30px;
+
+            border: none;
+            outline: none;
+
             background: var(--primary-purple);
             color: white;
-            border: none;
-            padding: 22px 60px;
-            font-size: 1.3rem;
+
+            padding: 18px 42px;
+
+            border-radius: 50px;
+
+            font-size: 1.15rem;
             font-weight: 600;
-            border-radius: 60px;
+
             cursor: pointer;
-            margin-top: 35px;
 
-            transition: all 0.35s ease;
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
 
-            box-shadow: 0 10px 25px rgba(74, 20, 140, 0.25);
+            box-shadow:
+                0 10px 25px rgba(74, 20, 140, 0.20);
+
+            touch-action: manipulation;
         }
 
         .btn-aceitar:hover {
-            transform: scale(1.07);
             background: #6a1b9a;
-            box-shadow: 0 15px 30px rgba(74, 20, 140, 0.35);
+
+            transform: scale(1.04);
+
+            box-shadow:
+                0 14px 30px rgba(74, 20, 140, 0.28);
         }
 
         .btn-aceitar:active {
-            transform: scale(0.98);
+            transform: scale(0.97);
         }
 
         /* MODAL */
@@ -171,83 +210,99 @@
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.75);
+
+            background: rgba(0,0,0,0.72);
 
             display: none;
+
             justify-content: center;
             align-items: center;
 
-            z-index: 9999;
             padding: 20px;
+
+            z-index: 999;
         }
 
         .message-card {
             background: white;
-            padding: 45px 35px;
-            border-radius: 30px;
-            position: relative;
 
-            max-width: 480px;
             width: 100%;
+            max-width: 450px;
+
+            padding: 40px 30px;
+
+            border-radius: 28px;
 
             text-align: center;
 
-            border-top: 10px solid var(--primary-purple);
+            position: relative;
 
-            animation: aparecer 0.45s ease;
+            border-top: 8px solid var(--primary-purple);
+
+            animation: popup 0.35s ease;
         }
 
         .close-btn {
             position: absolute;
-            top: 10px;
-            right: 20px;
 
-            font-size: 35px;
-            cursor: pointer;
+            top: 10px;
+            right: 18px;
+
+            font-size: 32px;
+
             color: #999;
 
-            transition: 0.3s;
+            cursor: pointer;
+
+            transition: 0.25s;
         }
 
         .close-btn:hover {
             color: var(--primary-purple);
-            transform: scale(1.1);
         }
 
         .message-card h3 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.2rem;
+
+            font-size: 3rem;
+
             color: var(--primary-purple);
+
             margin-bottom: 10px;
         }
 
-        .message-card .highlight {
-            font-size: 1.5rem;
-            color: #4a148c;
+        .highlight {
+            color: var(--primary-purple);
+
+            font-size: 1.35rem;
             font-weight: 700;
-            margin-bottom: 10px;
+
+            margin-bottom: 12px;
         }
 
-        .message-card .emoji {
-            font-size: 2.7rem;
-            margin-top: 18px;
+        .emoji {
+            margin-top: 16px;
+            font-size: 2.4rem;
         }
 
         /* FOOTER */
 
         footer {
-            padding: 40px 20px;
             text-align: center;
+
+            padding: 35px 20px;
+
             color: var(--primary-purple);
+
             font-weight: 600;
         }
 
         /* ANIMAÇÕES */
 
-        @keyframes aparecer {
+        @keyframes popup {
             from {
                 opacity: 0;
-                transform: scale(0.7);
+                transform: scale(0.8);
             }
 
             to {
@@ -256,35 +311,13 @@
             }
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes subir {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes flutuar {
+        @keyframes floating {
             0% {
                 transform: translateY(0px);
             }
 
             50% {
-                transform: translateY(-10px);
+                transform: translateY(-8px);
             }
 
             100% {
@@ -292,19 +325,21 @@
             }
         }
 
-        /* RESPONSIVO */
+        /* MOBILE */
 
         @media (max-width: 768px) {
 
-            .long-text,
+            .long-text {
+                padding: 28px;
+            }
+
             .proposal-card {
-                padding: 30px 25px;
+                padding: 40px 22px;
             }
 
             .btn-aceitar {
                 width: 100%;
-                padding: 20px;
-                font-size: 1.1rem;
+                padding: 18px;
             }
 
             .message-card h3 {
@@ -316,13 +351,23 @@
 
 <body>
 
+    <!-- HERO -->
+
     <header>
-        <div>✨💜✨</div>
+
+        <div class="hero-emoji">
+            ✨💜✨
+        </div>
 
         <h1>Nosso Destino</h1>
 
-        <p>A melhor escolha da minha vida.</p>
+        <p class="subtitle">
+            A melhor escolha da minha vida.
+        </p>
+
     </header>
+
+    <!-- CONTENT -->
 
     <section class="romantic-section">
 
@@ -352,6 +397,8 @@
             </p>
 
         </div>
+
+        <!-- CARD -->
 
         <div class="proposal-card">
 
@@ -398,41 +445,58 @@
     </div>
 
     <footer>
-        Sete meses inesquecíveis. 💜
+        Sete meses inesquecíveis 💜
     </footer>
+
+    <!-- SCRIPT -->
 
     <script>
 
         const modal = document.getElementById('modal');
 
-        function abrirCard() {
+        async function abrirCard() {
 
             modal.style.display = 'flex';
 
+            // Carrega confetti só quando clicar
+            const confettiModule = await import(
+                'https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.module.mjs'
+            );
+
+            const confetti = confettiModule.default;
+
             // Confetti principal
             confetti({
-                particleCount: 180,
-                spread: 90,
+                particleCount: 140,
+                spread: 85,
                 origin: { y: 0.6 },
-                colors: ['#4a148c', '#7b1fa2', '#ffffff', '#d1a3ff']
+
+                colors: [
+                    '#4a148c',
+                    '#7b1fa2',
+                    '#ffffff',
+                    '#d1a3ff'
+                ]
             });
 
-            // Confetti lateral
+            // Laterais
             setTimeout(() => {
+
                 confetti({
-                    particleCount: 80,
+                    particleCount: 70,
                     angle: 60,
-                    spread: 70,
+                    spread: 65,
                     origin: { x: 0 }
                 });
 
                 confetti({
-                    particleCount: 80,
+                    particleCount: 70,
                     angle: 120,
-                    spread: 70,
+                    spread: 65,
                     origin: { x: 1 }
                 });
-            }, 250);
+
+            }, 200);
         }
 
         function fecharCard() {
@@ -441,14 +505,16 @@
 
         // Fechar clicando fora
         window.onclick = function (e) {
+
             if (e.target === modal) {
                 fecharCard();
             }
-        }
+        };
 
         // ESC fecha modal
         document.addEventListener('keydown', function (e) {
-            if (e.key === "Escape") {
+
+            if (e.key === 'Escape') {
                 fecharCard();
             }
         });
@@ -456,4 +522,5 @@
     </script>
 
 </body>
+
 </html>
