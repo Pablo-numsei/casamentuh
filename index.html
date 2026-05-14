@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Para Todo o Sempre | 7 Meses</title>
-    
-    <link href="https://googleapis.com" rel="stylesheet">
-    <script src="https://jsdelivr.net"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <style>
         :root {
             --primary-purple: #4a148c;
             --mid-purple: #7b1fa2;
             --light-purple: #f3e5f5;
+            --soft-bg: #faf8ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: #faf8ff;
+            background-color: var(--soft-bg);
             color: #2e1a3d;
             line-height: 1.8;
+            overflow-x: hidden;
         }
+
+        /* HEADER */
 
         header {
             height: 100vh;
@@ -30,159 +50,410 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(74, 20, 140, 0.2), rgba(243, 229, 245, 0.9)), 
-                        url('https://unsplash.com') no-repeat center/cover;
             padding: 20px;
+
+            background:
+                linear-gradient(
+                    rgba(74, 20, 140, 0.25),
+                    rgba(243, 229, 245, 0.92)
+                ),
+                url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1400&auto=format&fit=crop')
+                no-repeat center/cover;
+
+            animation: fadeIn 1.5s ease;
+        }
+
+        header div {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            animation: flutuar 3s infinite ease-in-out;
         }
 
         h1 {
             font-family: 'Dancing Script', cursive;
             font-size: clamp(3.5rem, 10vw, 6rem);
             color: var(--primary-purple);
-            margin: 0;
+            margin-bottom: 10px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
 
+        header p {
+            font-size: 1.2rem;
+            color: #4d3561;
+            font-weight: 500;
+        }
+
+        /* SECTION */
+
         .romantic-section {
-            padding: 60px 25px;
-            max-width: 850px;
+            padding: 70px 25px;
+            max-width: 900px;
             margin: auto;
         }
 
         .long-text {
-            font-size: 1.15rem;
+            font-size: 1.12rem;
             color: #3b254a;
             text-align: justify;
             background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(74, 20, 140, 0.05);
+            padding: 45px;
+            border-radius: 25px;
+            box-shadow: 0 10px 35px rgba(74, 20, 140, 0.08);
             margin-bottom: 60px;
+            animation: subir 1s ease;
         }
 
-        .proposal-card {
-            background: linear-gradient(135deg, white, var(--light-purple));
-            padding: 60px 30px;
-            border-radius: 30px;
-            border: 2px solid var(--mid-purple);
-            text-align: center;
+        .long-text p {
+            margin-bottom: 22px;
         }
+
+        /* CARD */
+
+        .proposal-card {
+            background: linear-gradient(
+                135deg,
+                white,
+                var(--light-purple)
+            );
+
+            padding: 65px 30px;
+            border-radius: 30px;
+            border: 2px solid rgba(123, 31, 162, 0.2);
+            text-align: center;
+
+            box-shadow: 0 15px 40px rgba(74, 20, 140, 0.08);
+
+            animation: subir 1.2s ease;
+        }
+
+        .proposal-card h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+        }
+
+        .proposal-card p {
+            font-size: 1.15rem;
+            color: #55346e;
+        }
+
+        /* BUTTON */
 
         .btn-aceitar {
             background: var(--primary-purple);
             color: white;
             border: none;
             padding: 22px 60px;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            border-radius: 50px;
+            border-radius: 60px;
             cursor: pointer;
-            margin-top: 30px;
+            margin-top: 35px;
+
+            transition: all 0.35s ease;
+
+            box-shadow: 0 10px 25px rgba(74, 20, 140, 0.25);
         }
 
-        /* Modal Ultra Rápido */
+        .btn-aceitar:hover {
+            transform: scale(1.07);
+            background: #6a1b9a;
+            box-shadow: 0 15px 30px rgba(74, 20, 140, 0.35);
+        }
+
+        .btn-aceitar:active {
+            transform: scale(0.98);
+        }
+
+        /* MODAL */
+
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.8);
-            display: none; /* Controlado pelo JS */
+            background: rgba(0, 0, 0, 0.75);
+
+            display: none;
             justify-content: center;
             align-items: center;
+
             z-index: 9999;
+            padding: 20px;
         }
 
         .message-card {
             background: white;
-            padding: 40px;
-            border-radius: 25px;
+            padding: 45px 35px;
+            border-radius: 30px;
             position: relative;
-            max-width: 450px;
-            width: 85%;
+
+            max-width: 480px;
+            width: 100%;
+
             text-align: center;
+
             border-top: 10px solid var(--primary-purple);
+
+            animation: aparecer 0.45s ease;
         }
 
         .close-btn {
             position: absolute;
             top: 10px;
             right: 20px;
+
             font-size: 35px;
             cursor: pointer;
-            color: #aaa;
+            color: #999;
+
+            transition: 0.3s;
+        }
+
+        .close-btn:hover {
+            color: var(--primary-purple);
+            transform: scale(1.1);
         }
 
         .message-card h3 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
+            font-size: 3.2rem;
             color: var(--primary-purple);
             margin-bottom: 10px;
         }
 
+        .message-card .highlight {
+            font-size: 1.5rem;
+            color: #4a148c;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .message-card .emoji {
+            font-size: 2.7rem;
+            margin-top: 18px;
+        }
+
+        /* FOOTER */
+
         footer {
-            padding: 40px;
+            padding: 40px 20px;
             text-align: center;
             color: var(--primary-purple);
+            font-weight: 600;
+        }
+
+        /* ANIMAÇÕES */
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes subir {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes flutuar {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* RESPONSIVO */
+
+        @media (max-width: 768px) {
+
+            .long-text,
+            .proposal-card {
+                padding: 30px 25px;
+            }
+
+            .btn-aceitar {
+                width: 100%;
+                padding: 20px;
+                font-size: 1.1rem;
+            }
+
+            .message-card h3 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header>
-        <div style="font-size: 3rem;">✨💜✨</div>
+        <div>✨💜✨</div>
+
         <h1>Nosso Destino</h1>
+
         <p>A melhor escolha da minha vida.</p>
     </header>
 
-    <div class="romantic-section">
-        <div class="long-text">
-            <p>Sete meses se passaram e, se eu pudesse voltar no tempo, escolheria você outras mil vezes, cada vez mais rápido. O que vivemos até aqui transformou a minha forma de enxergar o mundo e me mostrou que o amor verdadeiro mora na simplicidade do nosso dia a dia, no seu sorriso e no brilho do seu olhar.</p>
-            
-            <p>Eu amo como a gente se completa, como cada conversa nossa parece durar minutos quando na verdade levamos horas, e como o seu abraço é o único lugar onde eu me sinto totalmente em paz. Sete meses de aprendizado, de risadas e de uma cumplicidade que eu nunca achei que fosse possível encontrar em alguém.</p>
+    <section class="romantic-section">
 
-            <p>Eu quero que esses sete meses sejam apenas o prefácio de uma história eterna. Quero estar ao seu lado em cada conquista, segurar sua mão em cada desafio e continuar me apaixonando por você todos os dias. Você é o meu presente mais precioso e o meu futuro mais desejado.</p>
+        <div class="long-text">
+
+            <p>
+                Sete meses se passaram e, se eu pudesse voltar no tempo,
+                escolheria você outras mil vezes, cada vez mais rápido.
+                O que vivemos até aqui transformou a minha forma de enxergar o
+                mundo e me mostrou que o amor verdadeiro mora na simplicidade
+                do nosso dia a dia, no seu sorriso e no brilho do seu olhar.
+            </p>
+
+            <p>
+                Eu amo como a gente se completa, como cada conversa nossa parece
+                durar minutos quando na verdade levamos horas, e como o seu abraço
+                é o único lugar onde eu me sinto totalmente em paz.
+                Sete meses de aprendizado, de risadas e de uma cumplicidade que eu
+                nunca achei que fosse possível encontrar em alguém.
+            </p>
+
+            <p>
+                Eu quero que esses sete meses sejam apenas o prefácio de uma história
+                eterna. Quero estar ao seu lado em cada conquista, segurar sua mão em
+                cada desafio e continuar me apaixonando por você todos os dias.
+                Você é o meu presente mais precioso e o meu futuro mais desejado.
+            </p>
+
         </div>
 
         <div class="proposal-card">
-            <h2 style="font-family: 'Dancing Script'; font-size: 2.8rem; color: var(--primary-purple);">Uma Vida Inteira...</h2>
-            <p>Você aceita continuar escrevendo essa história comigo para sempre?</p>
-            <button class="btn-aceitar" onclick="abrirCard()">SIM, EU ACEITO!</button>
+
+            <h2>Uma Vida Inteira...</h2>
+
+            <p>
+                Você aceita continuar escrevendo essa história comigo para sempre?
+            </p>
+
+            <button class="btn-aceitar" onclick="abrirCard()">
+                SIM, EU ACEITO!
+            </button>
+
         </div>
-    </div>
+
+    </section>
+
+    <!-- MODAL -->
 
     <div class="modal-overlay" id="modal">
+
         <div class="message-card">
-            <span class="close-btn" onclick="fecharCard()">&times;</span>
+
+            <span class="close-btn" onclick="fecharCard()">
+                &times;
+            </span>
+
             <h3>Eu te amo...</h3>
-            <p style="font-size: 1.4rem; color: #4a148c; font-weight: 600;">Feliz 7 meses meu amor!</p>
-            <p>Obrigado por ser a melhor parte de mim.</p>
-            <div style="font-size: 2.5rem; margin-top: 15px;">♾️💜💍</div>
+
+            <p class="highlight">
+                Feliz 7 meses meu amor!
+            </p>
+
+            <p>
+                Obrigado por ser a melhor parte de mim.
+            </p>
+
+            <div class="emoji">
+                ♾️💜💍
+            </div>
+
         </div>
+
     </div>
 
     <footer>
-        Sete meses inesquecíveis.
+        Sete meses inesquecíveis. 💜
     </footer>
 
     <script>
+
+        const modal = document.getElementById('modal');
+
         function abrirCard() {
-            // Ação imediata: mostra o card
-            document.getElementById('modal').style.display = 'flex';
-            
-            // Dispara confetes logo após
+
+            modal.style.display = 'flex';
+
+            // Confetti principal
             confetti({
-                particleCount: 150,
-                spread: 70,
+                particleCount: 180,
+                spread: 90,
                 origin: { y: 0.6 },
-                colors: ['#4a148c', '#7b1fa2', '#ffffff']
+                colors: ['#4a148c', '#7b1fa2', '#ffffff', '#d1a3ff']
             });
+
+            // Confetti lateral
+            setTimeout(() => {
+                confetti({
+                    particleCount: 80,
+                    angle: 60,
+                    spread: 70,
+                    origin: { x: 0 }
+                });
+
+                confetti({
+                    particleCount: 80,
+                    angle: 120,
+                    spread: 70,
+                    origin: { x: 1 }
+                });
+            }, 250);
         }
 
         function fecharCard() {
-            document.getElementById('modal').style.display = 'none';
+            modal.style.display = 'none';
         }
 
-        window.onclick = function(e) {
-            if (e.target == document.getElementById('modal')) fecharCard();
+        // Fechar clicando fora
+        window.onclick = function (e) {
+            if (e.target === modal) {
+                fecharCard();
+            }
         }
+
+        // ESC fecha modal
+        document.addEventListener('keydown', function (e) {
+            if (e.key === "Escape") {
+                fecharCard();
+            }
+        });
+
     </script>
+
 </body>
 </html>
